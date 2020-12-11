@@ -7,14 +7,13 @@ import styled from 'styled-components'
 
     return (
         <div className="charList-container">
-        <Character details={details}/>
-    {/*
+    
             {
         details.map( detailObj => {
                return <Character key={detailObj.id} details={detailObj}/>
            })
         }
-    */}
+    
         
            </div>
     );

@@ -10,9 +10,9 @@ const App = () => {
   const [details,setDetails] = useState([])
 
   useEffect(() =>{
-    axios.get('https://rickandmortyapi.com/api/character/2')
+    axios.get('https://rickandmortyapi.com/api/character')
       .then(res =>{
-        setDetails(res.data)
+        setDetails(res.data.results)
         console.log(res.data)
       })
       .catch(err =>{

@@ -3,41 +3,54 @@ import styled from 'styled-components'
 
 
 const CharDiv = styled.div`
-    width: 100%;
+    width: 600px;
     background: grey;
     color: purple;
     border-radius: 10px;
     margin: 2% 2% 2% 2%;
-    padding: 2em 2em 2em 2em;
+    display: flex;
+    display: flex;
+`
 
 
-    
+const StyledImg = styled.img`  
+    border-radius: 10px;
 
 `
 
 const InfoDiv = styled.div`
-    display: flex;
+    padding: 13.5px;
+`
+
+const SubDiv = styled.div`
+    justify-content: flex-start;
+    align-items: center;
+
 `
 
 const Character = (props) =>{
     const {details} = props
 
     return (
-        <CharDiv className="char-container"> 
-            <InfoDiv className="char-info">
+        <div className="charList-container"> 
+            <CharDiv className="charInfo-Wrapper">
                <div>
-               <img src={details.image}></img>
+               <StyledImg src={details.image}></StyledImg>
                </div>
             
-                <div>
-                    
-                    <h3>Name:{details.name}</h3>
-                    <h2>Species:{details.species}</h2>
-                    <h2>Gender:{details.gender}</h2>
-                </div>
-            </InfoDiv>
-            
-        </CharDiv>
+                <InfoDiv>
+                    <div>
+                        <h3>Name:{details.name}</h3>
+                        <span class='status-icon'>{details.status} - {details.species} - {details.gender}</span>
+                    </div>
+                    <div>
+                        <span>Last known location</span>
+                        <h3>{details.location.name}</h3>
+                    </div>                
+                </InfoDiv>
+            </CharDiv>
+
+        </div>
     )
 
 }
